@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --black:#000000;
+    --white:#FFFFFF;
+}
+
+/*TYPOGRAPHY*/
+
+h1{
+    font-size:calc(50px + 8 * ((100vw - 420px) / 860));
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2{
+    font-size: calc(22px + 5 * ((100vw - 420px) / 860));
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white);
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+h3{
+    font-size: calc(15px + 2 * ((100vw - 420px) / 860));
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+    font-weight: 100;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+p{
+    font-size: calc(13px + 2 * ((100vw - 420px) / 860));
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+/*END TYPOGRAPHY*/
+
+body{
+    background-image: url('img/sandra-ahn-mode-nctP5BtTD-0-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*HEADER*/
+header{
+    padding:10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+header ul{
+    z-index: 3;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header a{
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: calc(10px + 6 * ((100vw - 420px) / 860));
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+    padding-bottom: 5px;
+}
+
+header ::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: bottom right;
+    background-color: var(--white);
+}
+
+header a:hover::after{
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.active:hover::after{transform:scaleX(0);}
+
+.active{border-bottom:2px solid var(--white);}
+
+header li+li{margin-left: 10px;}
+
+/*END HEADER*/
+
+/*MAIN*/
+
+/*TITLE*/
+
+.title{
+    margin: 50px 0 0 30px;
+}
+
+.title a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: calc(12px + 3 * ((100vw - 420px) / 860));
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+    border: 1px solid var(--white);
+    padding: 5px 8px;
+}
+
+.title a:hover{
+    background-color:var(--white);
+    color: var(--black);
+    font-weight: 500;
+}
+
+/*END TITLE*/
+
+/*DESCRIPTION*/
+
+.description{
+    margin: 20px 0 0 30px;
+}
+
+.cloud{
+    width: 90%;
+    background: rgba(0, 0, 0, .6);
+    border-radius:10px;
+    padding: 5px 10px 20px;
+    color: var(--white);
+}
+
+.cloud+.cloud{margin-top: 20px;}
+
+.search{
+    width: 90%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.search i{
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    font-size: 12px;
+}
+
+
+.search input{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: var(--white);
+    outline: none;
+    border-bottom: 1px solid var(--white);
+    padding: 0 20px;
+}
+/*END DESCRIPTION*/
+
+/*END MAIN*/
+
+/*FOOTER*/
+
+footer{
+    padding:10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.icons{
+    color:rgba(255, 255, 255, 0.4);
+    z-index: 2;
+    font-size: calc(16px + 2 * ((100vw - 420px) / 860));
+}
+
+i{cursor: pointer;}
+
+footer i:hover{color: var(--white);}
+
+footer i+i{margin-left: 10px;}
+
+/*END FOOTER*/
+
+
+@media(min-width:750px){
+
+    
+    /*HEADER*/
+    header{padding:20px;}
+
+    header li+li{margin-left: 20px;}
+    /*END HEADER*/
+
+    /*MAIN*/
+
+    /*TITLE*/
+
+    .title{
+        margin: 60px 0 0 100px;
+    }
+
+    .title a{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: calc(12px + 12 * ((100vw - 420px) / 860));
+        font-family: 'Roboto', sans-serif;
+        color: var(--white);
+        border: 1px solid var(--white);
+        padding: 5px 8px;
+    }
+
+    .title a:hover{
+        background-color:var(--white);
+        color: var(--black);
+        font-weight: 500;
+    }
+
+    /*END TITLE*/
+
+
+    /*DESCRIPTION*/
+
+    .description{
+        width: 70%;
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+        display: flex;
+        z-index: 3;
+    }
+
+    .cloud{max-width: 600px;}
+
+    .cloud:last-child{max-width: 300px;}
+
+    .cloud+.cloud{margin-left: 20px;}
+
+    /*END DESCRIPTION*/
+
+    /*END MAIN*/
+}
